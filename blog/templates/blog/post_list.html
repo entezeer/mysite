@@ -1,10 +1,164 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>blog</title>
+    <title>Football</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-    <b>Hello</b>
-</body>
+
+		<header>
+            <div class="menu">
+                <ul id="menu">
+                   <span>football.kg</span>
+                    <li>
+                       <a href="index.html">Главная</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">О нас</a>
+                    </li>
+
+                    <li>
+                        <a href="news.html">Новости</a>
+                    </li>
+
+                    <li>
+                        <a href="">Материалы</a>
+                    </li>
+
+                    <li>
+                        <a href="">Статистика</a>
+                    </li>
+
+                    <li>
+                        <a href="">Фотоотчет</a>
+                    </li>
+
+                    <li>
+                        <a href="">Видео</a>
+                    </li>
+                     <div class="clock">
+                    <h2 id="clock">00:00:00</h2>
+                    <p id="color">#000000</p>
+                </div>
+                </ul>
+    <script src="{% static 'js/clock.js' %}"></script>
+            </div>
+		</header>
+
+		<center>
+                <h3 id="jose">Если Вы нравитесь людям, то Вы хороши.
+		      Если они ненавидят Вас, то Вы - лучший. Ж.Моуриньо</h3>
+		</center>
+
+	       <br/>
+
+		<center>
+            <div class="new">
+	               <span>
+                        <a href="#">Новое</a>
+                        <a href="#">Интересное</a>
+                    </span>
+	       </div>
+
+		</center>
+        <br/>
+        <div class="left-block">
+        <ul id="left-block">
+
+                    <li>
+                       <a href="">Календарь</a>
+                    </li>
+
+                    <li>
+                        <a href="">Матчи</a>
+                    </li>
+
+                    <li>
+                        <a href="">Турнирная таблица</a>
+                    </li>
+
+                    <li>
+                        <a href="">Команды</a>
+                    </li>
+
+                    <li>
+                        <a href="">Статистика</a>
+                    </li>
+
+                    <li>
+                        <a href="">Фотоотчет</a>
+                    </li>
+
+                    <li>
+                        <a href="">Видео</a>
+                    </li>
+
+            </ul>
+
+        </div>
+
+        <center>
+
+    <br/>
+    {% for post in posts %}
+  <div id="content">
+
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>published: {{ post.published_date }}</p>
+        <br/>
+    </div>
+{% endfor %}
+        </center>
+		<br/>
+		<br/>
+
+
+        <footer>
+            <span class="left"> Все права защищены &copy; 2017</span>
+
+	               <span class="right">
+                            <a href="https://vk.com">
+                                <img src="images/vk.png" />
+                            </a>
+
+                            <a href="https://google.com">
+                                <img src="images/go.png" />
+                            </a>
+
+                            <a href="https://facebook.com">
+                                <img src="images/face.png" />
+                            </a>
+
+                            <a href="https://youtube.com">
+                                <img src="images/you.png" />
+                            </a>
+
+                            <a href="https://instagram.com">
+                                <img src="images/inst.png" />
+                            </a>
+
+                            <a href="https://twitter.com">
+                                <img src="images/tw.png" />
+                            </a>
+                    </span>
+                    <center>
+                        <span class="info">
+                        email: entezeer@gmail.com
+                        T:+996(709)46-42-28
+                        Entezeer
+                        </span>
+                    </center>
+
+        </footer>
+	</body>
+
+
 </html>
